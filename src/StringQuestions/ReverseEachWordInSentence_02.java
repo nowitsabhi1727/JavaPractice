@@ -1,6 +1,6 @@
 package StringQuestions;
 
-public class ReverseEachWordInSentence {
+public class ReverseEachWordInSentence_02 {
     /*
      * Input=Java Selenium API
      * Expected=avaJ muineleS IPA
