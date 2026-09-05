@@ -5,15 +5,16 @@ import java.util.Arrays;
 public class RemoveDuplicateElementInArray_08 {
 
     /*
-     * Input = {20, 25, 7, 45, 18, 99, 99, 80, 70}
+     * Input = {20, 25, 25, 9, 45, 18, 994, 9, 80, 70}
      *
-     * Expected = 99
+     * Expected = {20, 25, 9, 45, 18, 994, 80, 70}
      *
      * Problem:
-     * Find the duplicate element of an array.
+     * Remove duplicate elements from an array while maintaining
+     * the original order of the unique elements.
      */
     public static void main(String[] args) {
-        int[] arr = {20, 25, 9, 45, 18, 994, 9, 80, 70};
+        int[] arr = {20, 25,25, 9, 45, 18, 994, 9, 80, 70};
         int isDupe = checkDuplicateElement(arr);
         int[] result = removeDuplicateElement(arr);
         int isDupeAfter = checkDuplicateElement(result);
@@ -43,7 +44,20 @@ public class RemoveDuplicateElementInArray_08 {
         }
         return 0;
     }
-
+    /*
+     * Approach: Brute-force using nested loops.
+     *
+     * 1. Take each element from the original array.
+     * 2. Compare it with all elements that are already stored
+     *    in the result array.
+     * 3. If the element is already present, skip it.
+     * 4. If it is not present, add it to the result array.
+     * 5. Use index to keep track of the next available position
+     *    in the result array.
+     *
+     * Time Complexity: O(n²)
+     * Space Complexity: O(n)
+     */
     public static int[] removeDuplicateElement(int[] arr) {
 
         int[] result = new int[arr.length];
